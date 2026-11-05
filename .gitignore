@@ -1,0 +1,23 @@
+# Dados fora do git; só as divisões (e a tabela de resoluções) são versionadas
+data/*
+!data/splits_seed*.json
+!data/resolucoes.csv
+
+# Resultados de execução (logs, checkpoints, máscaras previstas)
+runs/
+
+# Modelos e pesos
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Python e Colab
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Sistema
+.DS_Store

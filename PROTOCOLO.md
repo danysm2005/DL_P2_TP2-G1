@@ -103,9 +103,9 @@ O prompt **oráculo** (derivado da máscara real) é um **limite superior** e id
 
 | Fase | N.º imagens | Épocas | Tempo/época medido | Total estimado | Cabe no Colab? |
 |---|---|---|---|---|---|
-| U-Net | | | | | |
-| SAM afinado | | | | | |
-| Avaliação (seeds, bootstrap) | | | | | |
+| U-Net | 1000 | | | | |
+| SAM afinado | 1000 | | | | |
+| Avaliação (seeds, bootstrap) | 1000 | | | | |
 
 ## 9. Critério de seleção de modelo
 

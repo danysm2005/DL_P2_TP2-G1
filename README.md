@@ -88,11 +88,11 @@ A aplicação recebe uma imagem de colonoscopia e um clique no pólipo, uma caix
 
 | Papel | Responsável por | Elemento |
 |---|---|---|
-| A1 Dados | Divisões, CVC-ClinicDB, `PROTOCOLO.md`, `resultados.csv`, aplicação Gradio | <Eliana Monteiro> |
-| A2 Modelos | U-Net com encoder pré-treinado, 3 seeds, threshold na validação | <Miguel Carreira> |
-| A3 Porta-voz | SAM e SAM 2 com prompts de ponto e caixa, oráculo e jitter; seminário | <Sara Costa> |
-| A4 Aplicação | Interface (Gradio/Streamlit) e integração do modelo |<José Peixoto> |
-| A5 Qualidade e IA | `avaliar.py`, bootstrap, subgrupos, piores casos, estabilidade a prompts | <Daniel Moreira> |
+| A1 Dados | Divisões, CVC-ClinicDB, `PROTOCOLO.md`, `resultados.csv`, aplicação Gradio | Eliana Monteiro |
+| A2 Modelos | U-Net com encoder pré-treinado, 3 seeds, threshold na validação | Miguel Carreira |
+| A3 Porta-voz | SAM e SAM 2 com prompts de ponto e caixa, oráculo e jitter; seminário | Sara Costa |
+| A4 Aplicação | Interface (Gradio/Streamlit) e integração do modelo | José Peixoto |
+| A5 Qualidade e IA | `avaliar.py`, bootstrap, subgrupos, piores casos, estabilidade a prompts | Daniel Moreira |
 
 ## 8. Estado das vias
 

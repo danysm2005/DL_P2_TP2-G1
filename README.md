@@ -31,7 +31,7 @@ Na colonoscopia, a forma e o tamanho de um pólipo condicionam a decisão de o r
 ## 3. Métodos
 
 | Via | Método |
-|---|---|---|
+|---|---|
 | Baseline | U-Net com encoder pré-treinado em ImageNet (ex.: ResNet-34), Dice+BCE, augmentation, 352×352, 3 seeds |
 | Método avançado | SAM (ViT-B) e SAM 2 (Hiera-S) com prompt de ponto ou de caixa, zero-shot |
 | Método avançado (afinação leve) | Afinação do descodificador de máscara do SAM (encoder congelado, embeddings pré-calculados) |

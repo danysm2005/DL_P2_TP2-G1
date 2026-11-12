@@ -19,8 +19,8 @@ Na colonoscopia, a forma e o tamanho de um pólipo condicionam a decisão de o r
 
 | Conjunto | Utilização | Conteúdo | Licença / citação |
 |---|---|---|---|
-| **Kvasir-SEG** | Treino, validação e teste | 1000 imagens de colonoscopia com máscara binária e caixa envolvente; resolução variável (de 332×487 a 1920×1072) | Uso em investigação e ensino, **não comercial**. Citar Jha et al. (2020) |
-| **CVC-ClinicDB** | Teste externo (mudança de distribuição) | 612 fotogramas de 31 sequências, com máscara | Público. Citar Bernal et al. (2015) |
+| **Kvasir-SEG** | Treino, validação e teste | 1000 imagens de colonoscopia com máscara binária e caixa envolvente; resolução variável (de 332×487 a 1920×1072) | Uso em investigação e ensino, **não comercial**. Jha et al. (2020) |
+| **CVC-ClinicDB** | Teste externo (mudança de distribuição) | 612 fotogramas de 31 sequências, com máscara | Público. Bernal et al. (2015) |
 
 - **Divisão:** 80/10/10 (800/100/100), repetida com 3 seeds (`data/splits_seed{1,2,3}.json`, versionados).
 - **CVC-ClinicDB** nunca é usado para treinar nem para escolher nada (modelo, threshold, máscara).

@@ -117,7 +117,7 @@ A aplicação recebe uma imagem de colonoscopia e um clique no pólipo, uma caix
 | P2-D3 — protótipo (tag `v1-D3`) | 02/12 |
 | P2-D4 | 16/12 |
 | Relatório, repositório e `AI_LOG.md` (tag `v2-final`) | 04/01 |
-| P2-D5 — apresentação / defesa individual | 05/01 e 06/01 |
+| P2-D5 — apresentação / defesa individual | 05/01 e 07/01 |
 
 ## 10. Referências
 

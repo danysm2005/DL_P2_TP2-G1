@@ -98,15 +98,15 @@ A aplicação recebe uma imagem de colonoscopia e um clique no pólipo, uma caix
 
 | Via | Estado |
 |---|---|
-| Repositório e estrutura | ✅ criado |
+| Repositório e estrutura (A1) | ✅ criado |
 | Proposta (P2-D1) | ✅ criado |
 | Divisões com 3 seeds (A1) | ✅ criado |
-| U-Net baseline (A2) | ☐ |
-| SAM / SAM 2 zero-shot (A3) | ☐ |
-| SAM afinado (A4) | ☐ |
+| U-Net baseline (A5) | ✅ criado |
+| SAM / SAM 2 zero-shot (A3) | ✅ criado |
+| SAM afinado (A5) | ✅ criado |
 | `avaliar.py` e subgrupos (A5) | ☐ |
-| Aplicação Gradio | ☐ |
-| Teste externo (CVC-ClinicDB) | ☐ |
+| Aplicação Gradio (A4) | ✅ criado |
+| Teste externo (CVC-ClinicDB) (A5) | ✅ criado |
 
 ## 9. Calendário
 

@@ -1,7 +1,7 @@
 # G1 — Segmentação de pólipos em colonoscopia com modelos fundacionais (Kvasir-SEG)
 Projeto P2 · Deep Learning Aplicado · 2026/2027 
 
-**Elementos:** Eliana Monteiro, Miguel Carreira, Sara Costa, José Peixoto, Daniel Moreira
+**Elementos:** Eliana Monteiro, Sara Costa, José Peixoto, Daniel Moreira
 
 ---
 
@@ -13,17 +13,17 @@ Na colonoscopia, a forma e o tamanho de um pólipo condicionam a decisão de o r
 - **Decisão apoiada:** caracterizar a forma e o tamanho do pólipo para apoiar a remoção e a técnica; registar a lesão para seguimento.
 - **Tarefa:** segmentação binária de pólipos (pólipo vs. fundo).
 
-**Pergunta central:** um modelo que nunca viu uma colonoscopia (SAM/SAM 2, com prompts) aproxima-se, iguala ou supera uma U-Net treinada em 800 imagens do domínio? Com que tipo de prompt, com que robustez à imprecisão do utilizador e em que casos falha?
+**Questão central:** Um modelo que nunca foi treinado especificamente com imagens de colonoscopia (SAM/SAM 2), orientado por prompts, consegue aproximar-se, igualar ou superar uma U-Net treinada com 800 imagens do domínio? Como varia o desempenho consoante o tipo de indicação fornecida pelo utilizador? Até que ponto se mantém quando essas indicações são imprecisas? E em que situações falha?
 
 ## 2. Dados
 
 | Conjunto | Utilização | Conteúdo | Licença / citação |
 |---|---|---|---|
 | **Kvasir-SEG** | Treino, validação e teste | 1000 imagens de colonoscopia com máscara binária e caixa envolvente; resolução variável (de 332×487 a 1920×1072) | Uso em investigação e ensino, **não comercial**. Jha et al. (2020) |
-| **CVC-ClinicDB** | Teste externo (mudança de distribuição) | 612 fotogramas de 31 sequências, com máscara | Público. Bernal et al. (2015) |
+| **CVC-ClinicDB** | Teste externo (mudança de distribuição) | 612 fotogramas extraídos de 31 sequências, com máscara | Público. Bernal et al. (2015) |
 
 - **Divisão:** 80/10/10 (800/100/100), repetida com 3 seeds (`data/splits_seed{1,2,3}.json`, versionados).
-- **CVC-ClinicDB** nunca é usado para treinar nem para escolher nada (modelo, threshold, máscara).
+- **CVC-ClinicDB** reservado à avaliação externa, não sendo utilizado no treino ou na seleção e afinação dos modelos.
 - Os dados em si ficam fora do git (ver `.gitignore`); só as divisões e a tabela de resoluções são versionadas.
 
 **Limitação declarada:** o Kvasir-SEG não traz identificação do doente. Imagens do mesmo doente podem cair em treino e em teste, o que tende a inflacionar as métricas. A unidade de agrupamento possível é a imagem. A limitação é mitigada com várias seeds e divisões e com o teste externo no CVC-ClinicDB.
@@ -32,7 +32,7 @@ Na colonoscopia, a forma e o tamanho de um pólipo condicionam a decisão de o r
 
 | Via | Método |
 |---|---|
-| Baseline | U-Net com encoder pré-treinado em ImageNet (ex.: ResNet-34), Dice+BCE, augmentation, 352×352, 3 seeds |
+| Baseline | U-Net com encoder pré-treinado em ImageNet (ResNet-34), Dice+BCE, augmentation, 352×352, 3 seeds |
 | Método avançado | SAM (ViT-B) e SAM 2 (Hiera-S) com prompt de ponto ou de caixa, zero-shot |
 | Método avançado (afinação leve) | Afinação do descodificador de máscara do SAM (encoder congelado, embeddings pré-calculados) |
 | Pipeline automático | U-Net → caixa envolvente → SAM, sem intervenção do utilizador |

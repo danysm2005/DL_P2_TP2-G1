@@ -1,5 +1,5 @@
 # G1 — Segmentação de pólipos em colonoscopia com modelos fundacionais (Kvasir-SEG)
-Projeto P2 · Deep Learning Aplicado · 2026/2027 
+Projeto P2 · Aprendizagem Profunda Aplicada · 2026/2027 
 
 **Elementos:** Eliana Monteiro, Sara Costa, José Peixoto, Daniel Moreira
 

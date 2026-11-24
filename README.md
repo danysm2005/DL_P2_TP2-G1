@@ -19,7 +19,7 @@ Na colonoscopia, a forma e o tamanho de um pólipo condicionam a decisão de o r
 
 | Conjunto | Utilização | Conteúdo | Licença / citação |
 |---|---|---|---|
-| **Kvasir-SEG** | Treino, validação e teste | 1000 imagens de colonoscopia com máscara binária e caixa envolvente; resolução variável (de 332×487 a 1920×1072) | Uso em investigação e ensino, **não comercial**. Jha et al. (2020) |
+| **Kvasir-SEG** | Treino, validação e teste | 1000 imagens de colonoscopia com máscara binária e caixa envolvente; resolução variável (de 332×487 a 1920×1072) | Uso em investigação e ensino, não comercial. Jha et al. (2020) |
 | **CVC-ClinicDB** | Teste externo (mudança de distribuição) | 612 fotogramas extraídos de 31 sequências, com máscara | Público. Bernal et al. (2015) |
 
 - **Divisão:** 80/10/10 (800/100/100), repetida com 3 seeds (`data/splits_seed{1,2,3}.json`, versionados).
@@ -37,7 +37,7 @@ Na colonoscopia, a forma e o tamanho de um pólipo condicionam a decisão de o r
 | Método avançado (afinação leve) | Afinação do descodificador de máscara do SAM (encoder congelado, embeddings pré-calculados) |
 | Pipeline automático | U-Net → caixa envolvente → SAM, sem intervenção do utilizador |
 
-Os prompts "oráculo" (derivados da máscara real) são um **limite superior** e são identificados como tal. Os cenários realistas são o prompt com jitter e o pipeline automático.
+Os prompts "oráculo" (derivados da máscara real) são um limite superior e são identificados como tal. Os cenários realistas são o prompt com jitter e o pipeline automático.
 
 ## 4. Avaliação
 
@@ -68,7 +68,7 @@ DL_P2_TP1-G1/
 
 ## 6. Como executar
 
-O código foi corrido no **Google Colab (GPU T4)**, com os dados e os resultados numa pasta `P2_unet` da Google Drive. Os ficheiros em `notebooks/` são exportações do Colab e contêm comandos `!pip` e `drive.mount`: devem ser copiados célula a célula para um Colab, não corridos com `python`.
+O código foi corrido no Google Colab (GPU T4), com os dados e os resultados numa pasta `P2_unet` da Google Drive. Os ficheiros em `notebooks/` são exportações do Colab e contêm comandos `!pip` e `drive.mount`: devem ser copiados célula a célula para um Colab, não corridos com `python`.
 
 ```text
 1. Colab novo com GPU. Instalar: pip install -r requirements.txt
@@ -85,7 +85,7 @@ O código foi corrido no **Google Colab (GPU T4)**, com os dados e os resultados
 ```
 
 **Notas**
-- Seed de treino = seed de divisão: a seed *s* usa `data/splits_seed{s}.json`. Em `runs_UNet/split1_seed{s}`, o «split1» é só parte do nome da pasta.
+- Seed de treino = seed de divisão: a seed, s, usa `data/splits_seed{s}.json`. Em `runs_UNet/split1_seed{s}`, o «split1» é só parte do nome da pasta.
 - Os pesos (`*.keras`, `*.pt`, `*.pth`) e as probabilidades (`*.npz`) não estão no git; ficam na Drive do grupo.
 - Aplicação: `app/app.py` usa `src/inferencia.py`, que lê os pesos da Drive (variável de ambiente `P2_BASE`).
 
@@ -121,18 +121,17 @@ Os prompts de caixa e de ponto vêm da máscara real (oráculo): são um limite 
 
 | Via | Estado |
 |---|---|
-| Repositório e estrutura (A1) | ✅ criado |
+| Repositório e estrutura | ✅ criado |
 | Proposta (P2-D1) | ✅ criado |
-| Divisões com 3 seeds (A1) | ✅ criado |
-| U-Net baseline (A5) | ✅ criado |
-| SAM / SAM 2 zero-shot (A3) | ✅ criado |
-| SAM afinado (A5) | ✅ criado |
-| `avaliar.py`, subgrupos,  piores casos, calibração (A5) | ✅ criado |
+| Divisões com 3 seeds | ✅ criado |
+| U-Net baseline | ✅ criado |
+| SAM / SAM 2 zero-shot | ✅ criado |
+| SAM afinado | ✅ criado |
+| `avaliar.py`, subgrupos,  piores casos, calibração | ✅ criado |
 | Robustez ao jitter | ✅ criado |
-| Pipeline automático U-Net → caixa → SAM | só na aplicação; **não avaliado** nas experiências | ✅ criado |
 | Grad-CAM e curva de deleção na U-Net | ✅ criado |
-| Aplicação Gradio (A4) | ✅ criado |
-| Teste externo (CVC-ClinicDB) (A5) | ✅ criado |
+| Aplicação Gradio | ✅ criado |
+| Teste externo (CVC-ClinicDB) | ✅ criado |
 
 ## 9. Calendário
 
@@ -160,6 +159,6 @@ A lista completa fica em `paper/referencias.bib`.
 
 ## 11. Licenças e uso de IA
 
-- Os conjuntos Kvasir-SEG e CVC-ClinicDB são para uso em investigação e ensino, **não comercial**. Jha et al. (2020) e Bernal et al. (2015) são citados sempre que os dados são mencionados.
+- Os conjuntos Kvasir-SEG e CVC-ClinicDB são para uso em investigação e ensino, não comercial. Jha et al. (2020) e Bernal et al. (2015) são citados sempre que os dados são mencionados.
 - O SAM e o SAM 2 (código e pesos) estão sob licença Apache 2.0 (Meta); confirmar nos repositórios oficiais antes de qualquer utilização fora do contexto académico.
 - O uso de assistentes de IA está registado em [`AI_LOG.md`](AI_LOG.md).

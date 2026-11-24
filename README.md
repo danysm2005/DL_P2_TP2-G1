@@ -51,7 +51,7 @@ O protocolo experimental completo (hipóteses H1–H5, critérios de seleção d
 ## 5. Estrutura do repositório
 
 ```
-DL_P2_TP1-G<n>/
+DL_P2_TP1-G1/
   README.md        # problema, dados, como executar, estado das vias
   AI_LOG.md        # registo do uso de IA (todos os membros)
   PROTOCOLO.md     # protocolo experimental, fechado antes de tocar no teste
@@ -59,36 +59,59 @@ DL_P2_TP1-G<n>/
   data/            # fora do git; splits_seed{1,2,3}.json versionados
   src/             # dados.py, unet.py, sam_prompts.py, sam_finetune.py,
                    # avaliar.py, prompts.py, area.py
-  notebooks/       # exploração; nenhum resultado final nasce aqui
+  notebooks/       # 1_unet_sam_analise.py, 2_jitter.py, 3_cvc.py (exportados do Colab)
   runs/            # logs, checkpoints e máscaras previstas; fora do git
   app/app.py       # interface Gradio: imagem + clique/caixa -> máscara + área
-  paper/           # resultados.csv, leituras/, figuras/, tabelas/, manuscrito/
+  paper/           # resultados.csv, figuras/ e tabelas/ com os reultados finais
   requirements.txt
 ```
 
 ## 6. Como executar
 
-> A preencher à medida que o código for sendo escrito.
+O código foi corrido no **Google Colab (GPU T4)**, com os dados e os resultados numa pasta `P2_unet` da Google Drive. Os ficheiros em `notebooks/` são exportações do Colab e contêm comandos `!pip` e `drive.mount`: devem ser copiados célula a célula para um Colab, não corridos com `python`.
 
-```bash
-# 1. Clonar o repositório e instalar as dependências
-pip install -r requirements.txt
-
-# 2. Colocar o Kvasir-SEG e o CVC-ClinicDB em data/ (não versionados)
-
-# 3. Lançar a aplicação (a partir do protótipo P2-D3)
-python app/app.py
+```text
+1. Colab novo com GPU. Instalar: pip install -r requirements.txt
+2. Drive: pasta MyDrive/P2_unet com o código de src/, os splits e os dados:
+   - Kvasir-SEG: MyDrive/archive.zip
+   - CVC-ClinicDB: P2_unet/data/cvc-clinicdb/{images,masks}
+3. Ordem de execução:
+   notebooks/1_unet_sam_analise.py   splits, U-Net, SAM zero-shot e afinado, análises e tabelas
+   notebooks/2_jitter.py             robustez ao jitter (zero-shot e afinado)
+   notebooks/3_cvc.py                teste externo no CVC-ClinicDB
+4. Seeds 2 e 3: na U-Net muda-se SEED (célula de treino); no SAM afinado
+   usam-se --split e --seed em src/sam_ft_multi.py.
+5. Os resultados ficam em P2_unet/resultados_finais_relatorio (cópia em paper/).
 ```
 
-A aplicação recebe uma imagem de colonoscopia e um clique no pólipo, uma caixa desenhada ou o modo automático. Devolve a máscara sobreposta, a área estimada (píxeis e % da imagem), o modelo usado e o tempo.
+**Notas**
+- Seed de treino = seed de divisão: a seed *s* usa `data/splits_seed{s}.json`. Em `runs_UNet/split1_seed{s}`, o «split1» é só parte do nome da pasta.
+- Os pesos (`*.keras`, `*.pt`, `*.pth`) e as probabilidades (`*.npz`) não estão no git; ficam na Drive do grupo.
+- Aplicação: `app/app.py` usa `src/inferencia.py`, que lê os pesos da Drive (variável de ambiente `P2_BASE`).
 
 > **Aviso:** apoio à decisão; não substitui a avaliação clínica.
+
+## 6.1. Resultados principais (Kvasir-SEG, teste, 3 seeds)
+
+| Modelo | mDice | CVC-ClinicDB mDice |
+|---|---|---|
+| SAM 2 afinado (caixa) | 0.9372 ± 0.0038 | 0.9244 ± 0.0039 |
+| SAM 1 afinado (caixa) | 0.9231 ± 0.0021 | 0.9103 ± 0.0057 |
+| SAM 2 afinado (ponto) | 0.9175 ± 0.0159 | 0.8719 ± 0.0038 |
+| U-Net | 0.8995 ± 0.0145 | 0.8361 ± 0.0101 |
+| SAM 1 afinado (ponto) | 0.8918 ± 0.0123 | 0.7973 ± 0.0115 |
+| SAM 2 zero-shot (caixa) | 0.8795 ± 0.0180 | 0.9211 |
+| SAM 1 zero-shot (caixa) | 0.8624 ± 0.0124 | 0.8968 |
+| SAM 2 zero-shot (ponto) | 0.7466 ± 0.0411 | 0.7361 |
+| SAM 1 zero-shot (ponto) | 0.5288 ± 0.0409 | 0.4467 |
+
+Os prompts de caixa e de ponto vêm da máscara real (oráculo): são um limite superior. Intervalos de confiança, diferenças emparelhadas, jitter, subgrupos e piores casos estão na secção 13 do [`PROTOCOLO.md`](PROTOCOLO.md).
 
 ## 7. Papéis no grupo
 
 | Papel | Responsável por | Elemento |
 |---|---|---|
-| A1 Dados | Divisões, CVC-ClinicDB, `PROTOCOLO.md`, `resultados.csv`, aplicação Gradio | Eliana Monteiro |
+| A1 Dados | Divisões, CVC-ClinicDB, `PROTOCOLO.md`, `resultados.csv`| Eliana Monteiro |
 | A2 Modelos | U-Net com encoder pré-treinado, 3 seeds, threshold na validação | Daniel Moreira |
 | A3 Porta-voz | SAM e SAM 2 com prompts de ponto e caixa, oráculo e jitter; seminário | Sara Costa |
 | A4 Aplicação | Interface (Gradio/Streamlit) e integração do modelo | José Peixoto |
@@ -104,7 +127,10 @@ A aplicação recebe uma imagem de colonoscopia e um clique no pólipo, uma caix
 | U-Net baseline (A5) | ✅ criado |
 | SAM / SAM 2 zero-shot (A3) | ✅ criado |
 | SAM afinado (A5) | ✅ criado |
-| `avaliar.py` e subgrupos (A5) | ☐ |
+| `avaliar.py`, subgrupos,  piores casos, calibração (A5) | ✅ criado |
+| Robustez ao jitter | ✅ criado |
+| Pipeline automático U-Net → caixa → SAM | só na aplicação; **não avaliado** nas experiências | ✅ criado |
+| Grad-CAM e curva de deleção na U-Net | ✅ criado |
 | Aplicação Gradio (A4) | ✅ criado |
 | Teste externo (CVC-ClinicDB) (A5) | ✅ criado |
 
@@ -135,5 +161,5 @@ A lista completa fica em `paper/referencias.bib`.
 ## 11. Licenças e uso de IA
 
 - Os conjuntos Kvasir-SEG e CVC-ClinicDB são para uso em investigação e ensino, **não comercial**. Jha et al. (2020) e Bernal et al. (2015) são citados sempre que os dados são mencionados.
-- O SAM e o SAM 2 têm as respetivas licenças da Meta; verificar antes de qualquer utilização fora do contexto académico.
+- O SAM e o SAM 2 (código e pesos) estão sob licença Apache 2.0 (Meta); confirmar nos repositórios oficiais antes de qualquer utilização fora do contexto académico.
 - O uso de assistentes de IA está registado em [`AI_LOG.md`](AI_LOG.md).

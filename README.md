@@ -137,10 +137,10 @@ Os prompts de caixa e de ponto vêm da máscara real (oráculo): são um limite 
 
 | Entrega | Data |
 |---|---|
-| P2-D1 — proposta | 28/10 |
-| P2-D2 — seminário (tema A) | 17/11 |
-| P2-D3 — protótipo (tag `v1-D3`) | 02/12 |
-| P2-D4 | 16/12 |
+| P2-D1 — Proposta do Projeto | 28/10 |
+| P2-D2 — Seminário I (tema A2) | 17/11 |
+| P2-D3 — Protótipo (tag `v1-D3`) | 02/12 |
+| P2-D4 — Resultados e Discussão| 16/12 |
 | Relatório, repositório e `AI_LOG.md` (tag `v2-final`) | 04/01 |
 | P2-D5 — apresentação / defesa individual | 05/01 e 07/01 |
 

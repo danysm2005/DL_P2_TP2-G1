@@ -1,1 +1,31 @@
-# Dependências do projeto (a preencher)
+# Dependências do projeto 
+
+# Testado no Google Colab (GPU T4). Para fixar versões, correr `pip freeze` na sessão onde o projeto correu.
+numpy
+pandas
+scipy
+matplotlib
+openpyxl
+pyyaml
+opencv-python-headless
+albumentations
+huggingface_hub
+
+# U-Net (Keras 2 via tf-keras; definir TF_USE_LEGACY_KERAS=1 antes de importar o tensorflow)
+tensorflow
+tf-keras
+image-classifiers
+
+# SAM e SAM 2
+torch
+torchvision
+segment-anything
+
+# SAM 2 não está no PyPI; nos notebooks instala-se com: pip install --no-deps git+https://github.com/facebookresearch/sam2.git
+git+https://github.com/facebookresearch/sam2.git
+hydra-core
+iopath
+
+# Aplicação
+gradio
+

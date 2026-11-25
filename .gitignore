@@ -11,6 +11,9 @@ runs/
 *.pth
 *.ckpt
 *.safetensors
+*.keras
+*.h5
+*.npz
 
 # Python e Colab
 __pycache__/

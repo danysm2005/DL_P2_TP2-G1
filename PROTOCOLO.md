@@ -1,6 +1,6 @@
 # PROTOCOLO.md: protocolo experimental
 
-Tema A · Segmentação de pólipos em colonoscopia (Kvasir-SEG) · Grupo `DL_P2_TP1-G<n>`
+Tema A · Segmentação de pólipos em colonoscopia (Kvasir-SEG) · Grupo `DL_P2_TP1-G1`
 
 **Estado:** Protocolo escrito na aula PL09 (12/11/2026). A secção 7 (resultados) foi acrescentada depois, quando o conjunto de teste já tinha sido avaliado. As secções 1 a 6 só foram corrigidas onde descreviam o código de forma diferente da realmente usada (*augmentation*, *loss*, fases de treino da U-Net, tempos de treino); nenhum critério nem análise prevista foi alterado.
 
@@ -17,6 +17,53 @@ Tema A · Segmentação de pólipos em colonoscopia (Kvasir-SEG) · Grupo `DL_P2
 | H3 | A caixa é melhor do que o ponto e perde menos de 3 pontos de Dice com jitter de 10%. |
 | H4 | O Dice cai nos pólipos pequenos (< 2% da imagem) e nas imagens com brilho especular, em todas as condições. |
 | H5 | No CVC-ClinicDB a U-Net degrada-se mais do que o SAM zero-shot (mudança de distribuição). |
+
+
+
+## 1. Pergunta central e hipóteses
+
+**Pergunta central:** até que ponto os modelos fundacionais SAM e SAM 2,
+orientados por prompts e sem treino específico inicial no domínio da
+colonoscopia, conseguem aproximar-se ou superar uma U-Net treinada com
+imagens do Kvasir-SEG? Como varia o desempenho com o tipo de prompt e
+com a imprecisão das indicações?
+
+  -----------------------------------------------------------------------
+  ID                                  Hipótese
+  ----------------------------------- -----------------------------------
+  H1                                  O SAM zero-shot com caixa oráculo
+                                      atinge um mDice não inferior ao da
+                                      U-Net (o IC 95% da diferença inclui
+                                      zero ou favorece o SAM).
+
+  H2                                  A afinação leve do descodificador
+                                      de máscara melhora o desempenho
+                                      face ao zero-shot e à U-Net, com IC
+                                      95% da diferença emparelhada a
+                                      excluir zero.
+
+  H3                                  O prompt de caixa apresenta melhor
+                                      desempenho do que o prompt de ponto
+                                      e perde menos de 3 pontos de Dice
+                                      com jitter de 10%.
+
+  H4                                  O desempenho diminui em casos
+                                      difíceis: pólipos pequenos (área
+                                      inferior a 2% da imagem), reflexos
+                                      especulares e limites pouco
+                                      definidos.
+
+  H5                                  No CVC-ClinicDB, a U-Net sofre uma
+                                      degradação de desempenho superior à
+                                      dos modelos SAM zero-shot, devido à
+                                      mudança de distribuição.
+  -----------------------------------------------------------------------
+
+
+
+
+
+
 
 ## 2. Dados
 

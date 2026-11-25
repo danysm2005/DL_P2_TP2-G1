@@ -2,9 +2,7 @@
 
 Tema A · Segmentação de pólipos em colonoscopia (Kvasir-SEG) · Grupo `DL_P2_TP1-G<n>`
 
-**Estado: RASCUNHO.** Fecha-se e versiona-se na PL09 (11/11), **antes de qualquer avaliação no conjunto de teste**. Depois de fechado, só se altera com nota datada na secção 12.
-
-Campos marcados com **[A2]**, **[A3]**, **[A4]** ou **[A5]** são para o responsável confirmar ou completar.
+**Estado:** Protocolo escrito na aula PL09 (12/11/2026). A secção 7 (resultados) foi acrescentada depois, quando o conjunto de teste já tinha sido avaliado. As secções 1 a 6 só foram corrigidas onde descreviam o código de forma diferente da realmente usada (*augmentation*, *loss*, fases de treino da U-Net, tempos de treino); nenhum critério nem análise prevista foi alterado.
 
 ---
 

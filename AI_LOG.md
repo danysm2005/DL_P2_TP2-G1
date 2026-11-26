@@ -21,4 +21,4 @@ Assistente usado: Claude (Anthropic). Cada linha diz o que a IA propôs, se esta
 
 ## Outros membros
 
-*(Eliana Monteiro, Miguel Carreira, Sara Costa, José Peixoto: acrescentar as vossas entradas.)*
+*(Eliana Monteiro, Sara Costa, José Peixoto: acrescentar as vossas entradas.)*

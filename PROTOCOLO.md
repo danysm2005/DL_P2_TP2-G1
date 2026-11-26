@@ -36,7 +36,7 @@ com a imprecisão das indicações?
 | Kvasir-SEG (Jha et al., 2020) | treino, validação, teste | 1000 pares imagem–máscara |
 | CVC-ClinicDB (Bernal et al., 2015) | teste externo | 612 fotogramas, 31 sequências |
 
-###2.2. Verificação dos dados
+### 2.1. Verificação dos dados
 Verificação realizada em 24/10/2026 pelo elemento A1.
 - 1000 imagens e 1000 máscaras do Kvasir-SEG, com nomes coincidentes; 0 pares com imagem e máscara de tamanhos diferentes.
 - Largura entre 332 e 1920 e altura entre 352 e 1072, com 333 resoluções distintas. A resolução mais frequente foi 622×530 (78 imagens). Tabela completa em `resolucoes.csv`.

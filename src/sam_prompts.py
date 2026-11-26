@@ -1,5 +1,3 @@
-# SAM zero-shot com prompts de ponto e caixa
-
 sam_prompts.py
 100%
 """SAM / SAM 2 zero-shot com prompts oráculo e com jitter (A3)."""

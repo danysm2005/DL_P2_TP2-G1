@@ -1,0 +1,13 @@
+# Afinação leve do descodificador (A4). Hiperparâmetros: ajustar SÓ na validação.
+modelo: sam_vit_b
+ckpt: sam_vit_b_01ec64.pth
+prompt: caixa
+splits: [1, 2, 3]
+seeds: [1, 2, 3]
+epocas: 30
+paciencia: 5
+lr: 5.0e-5
+wd: 0.01
+bs: 8                # imagens por passo do optimizador (acumulação de gradientes)
+jitter_treino: 0.1   # amplitude máxima do jitter da caixa durante o treino
+seed_prompts: 0      # igual ao --seed de sam_prompts.py => mesmas caixas que o zero-shot

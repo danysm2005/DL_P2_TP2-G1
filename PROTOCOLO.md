@@ -149,7 +149,7 @@ As definições operacionais utilizadas no código encontram-se em
 As condições são avaliadas nas mesmas divisões do Kvasir-SEG.
 
 | Condição | Prompt/Configuração | Responsável |
-|---|---|
+|---|---|---|
 | U-Net (3 seeds × 3 divisões) | Baseline Supervisionada| A5 |
 | SAM zero-shot | Caixa oráculo | A3 |
 | SAM zero-shot | Ponto central e ponto aleatório dentro do pólipo | A3 |

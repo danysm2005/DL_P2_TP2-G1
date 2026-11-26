@@ -1,6 +1,6 @@
 # PROTOCOLO.md: protocolo experimental
 
-Tema A · Segmentação de pólipos em colonoscopia (Kvasir-SEG) · Grupo `DL_P2_TP1-G1`
+Tema A · Segmentação de pólipos em colonoscopia (Kvasir-SEG) · Grupo `DL_P2_TP2-G1`
 
 **Estado:** Protocolo escrito na aula PL09 (12/11/2026). A secção 7 (resultados) foi acrescentada depois, quando o conjunto de teste já tinha sido avaliado. As secções 1 a 6 só foram corrigidas onde descreviam o código de forma diferente da realmente usada (*augmentation*, *loss*, fases de treino da U-Net, tempos de treino); nenhum critério nem análise prevista foi alterado.
 

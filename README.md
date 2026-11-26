@@ -47,7 +47,7 @@ Os prompts "oráculo" (derivados da máscara real) são um limite superior e sã
 
 O protocolo experimental completo (hipóteses H1–H5, critérios de seleção de modelo, análises previstas) está em [`PROTOCOLO.md`](PROTOCOLO.md).
 
-## 5. Estrutura do repositório
+## 5. Estrutura do Repositório
 
 ```
 DL_P2_TP1-G1/

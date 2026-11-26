@@ -1,0 +1,41 @@
+Modelo,Rank Pior,Seed,Imagem,Dice
+U-Net,1,3,cju7b1ygu1msd0801hywhy0mc,0.0089
+U-Net,2,3,cju8cattbsivm0818p446wgel,0.1091
+U-Net,3,2,cju5uhrdwkmsu0817ervv91l8,0.2117
+U-Net,4,3,ck2bxw18mmz1k0725litqq2mc,0.2146
+U-Net,5,3,cju1egx9pvz2n0988eoy8jp23,0.2495
+U-Net,6,2,cju2ro5jqsy680988pi6qsujw,0.256
+U-Net,7,2,cju89z6pqpqfx0817mfv8ixjc,0.2625
+U-Net,8,1,cju1ewnoh5z030855vpex9uzt,0.3651
+U-Net,9,3,cju2lyynuymli0855g7fxgbhe,0.3783
+U-Net,10,1,cju5k7r0yf98c09878csbxb4d,0.4553
+SAM2 ZS (Caixa),1,1,cju0roawvklrq0799vmjorwfv,0.0
+SAM2 ZS (Caixa),2,1,cju334jzo261t0835yqudnfs1,0.0001
+SAM2 ZS (Caixa),3,2,cju85fc11ljr40818edpb0inh,0.003
+SAM2 ZS (Caixa),4,1,cju30ajhw09sx0988qyahx9s8,0.0272
+SAM2 ZS (Caixa),5,2,cju8567gdlcbq0801dwwyo2jt,0.0295
+SAM2 ZS (Caixa),6,2,cju17g6ykn1cs0993dww6qdi8,0.0844
+SAM2 ZS (Caixa),7,2,cju3xvoo2iqlc0817eku2r3wl,0.1398
+SAM2 ZS (Caixa),8,1,cju32gzs6xo8x0993r8tedbpb,0.1781
+SAM2 ZS (Caixa),9,3,cju2y5zas8m7f0801d34g5owq,0.2179
+SAM2 ZS (Caixa),10,1,cju6v6g6kvdw007552x6mb0po,0.2873
+SAM2 FT (Caixa),1,3,cju85plp7lmkw0850rx42jdpf,0.2792
+SAM2 FT (Caixa),2,1,cju7dtb1e2j0t0818deq51ib3,0.3113
+SAM2 FT (Caixa),3,2,cju5yeqiwmkgl0801fzv2douc,0.3838
+SAM2 FT (Caixa),4,3,cju2igw4gvxds0878808qj398,0.4087
+SAM2 FT (Caixa),5,1,cju16whaj0e7n0855q7b6cjkm,0.4087
+SAM2 FT (Caixa),6,2,cju2ro5jqsy680988pi6qsujw,0.4869
+SAM2 FT (Caixa),7,3,cju2y5zas8m7f0801d34g5owq,0.4971
+SAM2 FT (Caixa),8,1,cju30ia8da2bq0799klnehml2,0.6662
+SAM2 FT (Caixa),9,2,cju2zdhsczmn50988z64qwg2q,0.6798
+SAM2 FT (Caixa),10,1,cju5cjh3xattc0817j2vbulzi,0.6897
+SAM2 FT (Ponto),1,2,cju89z6pqpqfx0817mfv8ixjc,0.316
+SAM2 FT (Ponto),2,2,cju7avvi51iox0817ym55y6tt,0.4577
+SAM2 FT (Ponto),3,2,cju430pm2lz0y0755jkhcc3d1,0.4846
+SAM2 FT (Ponto),4,2,cju2ro5jqsy680988pi6qsujw,0.4865
+SAM2 FT (Ponto),5,3,cju320gyvbch60801v2amdi2g,0.4949
+SAM2 FT (Ponto),6,1,cju16whaj0e7n0855q7b6cjkm,0.5028
+SAM2 FT (Ponto),7,2,cju5yeqiwmkgl0801fzv2douc,0.5599
+SAM2 FT (Ponto),8,3,cju2lyynuymli0855g7fxgbhe,0.5663
+SAM2 FT (Ponto),9,2,cju439oazm2fu0871ma0vvrft,0.6158
+SAM2 FT (Ponto),10,2,cju41p90plcsx08018cnzpndc,0.6271

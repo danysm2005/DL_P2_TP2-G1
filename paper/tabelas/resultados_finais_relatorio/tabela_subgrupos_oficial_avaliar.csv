@@ -1,0 +1,10 @@
+Modelo,Geral (mDice),Pólipos Pequenos (<2% área),Com Reflexos Especulares,Limites Pouco Definidos
+SAM2 FT (Caixa),0.9372,0.9429,0.9359,0.9409
+SAM1 FT (Caixa),0.9231,0.9421,0.9257,0.9273
+SAM2 FT (Ponto),0.9175,0.862,0.9182,0.9114
+U-Net,0.8995,0.6538,0.8955,0.9032
+SAM1 FT (Ponto),0.8918,0.8474,0.8817,0.892
+SAM2 ZS (Caixa),0.8795,0.9331,0.8627,0.9125
+SAM1 ZS (Caixa),0.8624,0.9299,0.8436,0.9055
+SAM2 ZS (Ponto),0.7466,0.4967,0.7252,0.7282
+SAM1 ZS (Ponto),0.5288,0.4695,0.5286,0.4351

@@ -1,0 +1,10 @@
+Modelo,Kvasir HD Máx (px),Kvasir HD95 (px)
+SAM2 ZS (Caixa),61.89 ± 3.29,47.66 ± 4.10
+SAM2 FT (Caixa),64.50 ± 0.94,30.01 ± 3.74
+SAM1 FT (Caixa),65.83 ± 5.26,38.04 ± 4.52
+SAM1 ZS (Caixa),76.92 ± 4.31,59.47 ± 3.98
+U-Net,89.30 ± 2.50,49.75 ± 2.97
+SAM2 FT (Ponto),91.06 ± 6.42,48.47 ± 5.17
+SAM1 FT (Ponto),96.02 ± 4.83,55.72 ± 1.96
+SAM2 ZS (Ponto),130.32 ± 8.90,92.63 ± 9.24
+SAM1 ZS (Ponto),194.13 ± 7.61,163.87 ± 10.64

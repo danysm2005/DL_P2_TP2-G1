@@ -79,7 +79,7 @@ corresponde ao hash registado.
 
 
 | Ficheiro |Treino| Validação | Teste | SHA-256 |
-|---|---|
+|---|---|---|---|---|
 | `data/splits_seed1.json` | 800 | 100 | 100 |`2e59908720aa911efcba5568311b45fcc1743fac3df615b17b8a53226aea8cb7` |
 |  `data/splits_seed2.json` | 800 | 100 | 100 | `8e54099dd6ab179c82c25b2e309c7016bf1b5d7edab517aac00ff06d6cf6a9e5` |
 | `data/splits_seed3.json` | 800 | 100 | 100 | `52feb9d9f8c522f53c211b3992e404f7fae2a22b5138148b3df01ce34d598b47` |

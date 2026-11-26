@@ -56,8 +56,8 @@ DL_P2_TP1-G1/
   PROTOCOLO.md     # protocolo experimental, fechado antes de tocar no teste
   configs/         # um YAML por experiência: modelo, prompt, seed, split
   data/            # fora do git; splits_seed{1,2,3}.json versionados
-  src/             # dados.py, unet.py, sam_prompts.py, sam_finetune.py,
-                   # avaliar.py, prompts.py, area.py
+  src/             # dados.py, sam_prompts.py, sam_finetune.py,
+                   # avaliar.py, sam_ft_multi.py, __init__.py
   notebooks/       # 1_unet_sam_analise.py, 2_jitter.py, 3_cvc.py (exportados do Colab)
   runs/            # logs, checkpoints e máscaras previstas; fora do git
   app/app.py       # interface Gradio: imagem + clique/caixa -> máscara + área

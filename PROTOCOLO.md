@@ -255,9 +255,7 @@ A seleção é realizada exclusivamente com os dados de validação:
 8.  Comparação da generalização entre Kvasir-SEG e CVC-ClinicDB.
 9.  Registo do tempo de inferência por imagem.
 
-## 11. Avaliação no teste e critério de sucesso
-
-### 11.1. Conjunto de teste
+## 11. Avaliação no teste
 
 -   Cada condição é avaliada uma única vez por divisão, depois de
     congelado e versionado o protocolo.
@@ -268,35 +266,6 @@ A seleção é realizada exclusivamente com os dados de validação:
 -   Qualquer correção de erro de implementação que obrigue a repetir uma
     avaliação deve ser documentada na secção 13, identificando o erro, a
     correção e as condições reavaliadas.
-
-### 11.2. Critério de sucesso
-
-Considera-se evidência de melhoria relevante quando uma condição SAM/SAM
-2 apresenta:
-
--   aumento de pelo menos 0,0200 no mDice face à U-Net
-    (`ΔmDice ≥ +0.0200`); e
--   intervalo de confiança de 95% da diferença emparelhada inteiramente
-    acima de zero.
-
-A interpretação final deve também considerar a robustez aos prompts e o
-desempenho no CVC-ClinicDB. O não cumprimento do critério não invalida o
-estudo: a resposta quantitativa à pergunta central, incluindo
-limitações, variabilidade e falhas, constitui o resultado do projeto.
-
-### 11.3. Verificações finais
-
--   [ ] O Dice é calculado na resolução original da máscara.
--   [ ] A relação aproximada `Dice = 2 × IoU / (1 + IoU)` é verificada
-    por imagem.
--   [ ] Todas as condições usam as mesmas divisões e o mesmo
-    `src/avaliar.py`.
--   [ ] Os hashes das divisões correspondem aos valores registados.
--   [ ] O CVC-ClinicDB não foi utilizado em qualquer decisão
-    metodológica.
--   [ ] Os prompts oráculo estão identificados como tal.
--   [ ] Os resultados de *jitter* e dos subgrupos correspondem às
-    configurações efetivamente executadas.
 
 ## 12. Resultados registados
 
